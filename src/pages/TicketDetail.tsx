@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 import { useParams, useNavigate } from "react-router-dom";
+=======
+import { useParams } from "react-router-dom";
+>>>>>>> 65b23d54a98f973802ecae85fdee71ccb87c0261
 import { useTicketStore } from "../store/ticketStore";
 import { useEffect } from "react";
 
@@ -36,4 +40,8 @@ export default function TicketDetail() {
       </button>
     </div>
   );
+<<<<<<< HEAD
 }
+=======
+}
+>>>>>>> 65b23d54a98f973802ecae85fdee71ccb87c0261

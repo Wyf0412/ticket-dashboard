@@ -1,7 +1,11 @@
 import axios from "axios";
 
 export const api = axios.create({
+<<<<<<< HEAD
   baseURL: "",
+=======
+  baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:3001",
+>>>>>>> 65b23d54a98f973802ecae85fdee71ccb87c0261
   timeout: 5000,
 });
 
@@ -24,4 +28,8 @@ export type Ticket = {
   createdAt: string;
 };
 
+<<<<<<< HEAD
 export type TicketInput = Omit<Ticket, "id" | "createdAt">;
+=======
+export type TicketInput = Omit<Ticket, "id" | "createdAt">;
+>>>>>>> 65b23d54a98f973802ecae85fdee71ccb87c0261
