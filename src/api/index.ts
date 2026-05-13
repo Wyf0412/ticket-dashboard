@@ -1,15 +1,10 @@
 import axios from "axios";
 
 export const api = axios.create({
-<<<<<<< HEAD
-  baseURL: "",
-=======
-  baseURL: import.meta.env.VITE_API_BASE_URL || "http://localhost:3001",
->>>>>>> 65b23d54a98f973802ecae85fdee71ccb87c0261
+  baseURL: "",   // 空字符串
   timeout: 5000,
 });
 
-// 响应拦截器统一处理错误
 api.interceptors.response.use(
   (response) => response,
   (error) => {
@@ -18,7 +13,6 @@ api.interceptors.response.use(
   }
 );
 
-// 定义工单类型
 export type Ticket = {
   id: string;
   title: string;
@@ -28,8 +22,4 @@ export type Ticket = {
   createdAt: string;
 };
 
-<<<<<<< HEAD
 export type TicketInput = Omit<Ticket, "id" | "createdAt">;
-=======
-export type TicketInput = Omit<Ticket, "id" | "createdAt">;
->>>>>>> 65b23d54a98f973802ecae85fdee71ccb87c0261

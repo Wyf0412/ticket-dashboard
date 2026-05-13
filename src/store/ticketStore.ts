@@ -19,11 +19,7 @@ export const useTicketStore = create<TicketState>((set) => ({
   fetchTickets: async () => {
     set({ loading: true, error: null });
     try {
-<<<<<<< HEAD
       const res = await api.get<Ticket[]>("/api/tickets");
-=======
-      const res = await api.get<Ticket[]>("/tickets");
->>>>>>> 65b23d54a98f973802ecae85fdee71ccb87c0261
       set({ tickets: res.data, loading: false });
     } catch (err) {
       set({ error: "加载工单失败", loading: false });
@@ -37,11 +33,7 @@ export const useTicketStore = create<TicketState>((set) => ({
         ...ticket,
         createdAt: new Date().toISOString(),
       };
-<<<<<<< HEAD
       const res = await api.post<Ticket>("/api/tickets", newTicket);
-=======
-      const res = await api.post<Ticket>("/tickets", newTicket);
->>>>>>> 65b23d54a98f973802ecae85fdee71ccb87c0261
       set((state) => ({ tickets: [...state.tickets, res.data], loading: false }));
     } catch (err) {
       set({ error: "添加工单失败", loading: false });
@@ -52,11 +44,7 @@ export const useTicketStore = create<TicketState>((set) => ({
   updateTicketStatus: async (id, status) => {
     set({ loading: true, error: null });
     try {
-<<<<<<< HEAD
       const res = await api.patch<Ticket>(`/api/tickets/${id}`, { status });
-=======
-      const res = await api.patch<Ticket>(`/tickets/${id}`, { status });
->>>>>>> 65b23d54a98f973802ecae85fdee71ccb87c0261
       set((state) => ({
         tickets: state.tickets.map((t) => (t.id === id ? res.data : t)),
         loading: false,
